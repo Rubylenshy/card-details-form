@@ -105,7 +105,7 @@ for (let i = 0; i < input.length; i++) {
            
            return false;
         }else if (input[4].value.length != 3 || isNaN(input[4].value)) {
-            error[3].textContent = 'Exp. date is not valid' ;
+            error[3].textContent = 'CVC is not valid' ;
             input[4].classList.add('error');
             input[4].classList.remove('keyup');
 
@@ -130,7 +130,7 @@ btnConfirm.addEventListener('click', (e)=>{
     // Display User Input
     for (let i = 0; i < input.length; i++) {
         
-        if (input[0].value == '' || input[1].value == '' || input[2].value == '' || input[3].value == '' || input[4].value == '') {
+        if (input[i].value == '' || error[0].textContent != '' || error[1].textContent != '' || error[2].textContent != '' || error[3].textContent != '') {
             document.querySelector('.error-msg').style.visibility = 'visible';
             
         }
