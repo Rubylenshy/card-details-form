@@ -13,8 +13,8 @@ for (let i = 0; i < input.length; i++) {
     input[0].onkeyup = ()=>{
 
         if (input[0].value == '' || !isNaN(input[0].value)) {
-           error[0].textContent = 'First name cannot be empty' ;
-           input[0].classList.add('error');
+            error[0].textContent = 'First name cannot be empty' ;
+            input[0].classList.add('error');
            
            return false;
         }else{
@@ -29,7 +29,9 @@ for (let i = 0; i < input.length; i++) {
     // CC NUMBER
 
     input[1].onkeyup = ()=>{
-        var letters = /\w+/
+        var letters = /[A-Za-z]+/;
+        var numbers = /[0-9]+/;
+
         if (input[1].value == '') {
            error[1].textContent = 'Card number cannot be empty' ;
            input[1].classList.add('error');
@@ -37,12 +39,12 @@ for (let i = 0; i < input.length; i++) {
         }else if (input[1].value.length == 4 || input[1].value.length == 9 || input[1].value.length == 14) {
             input[1].value = input[1].value + ' ';
             return false;
-        }else if (input[1].value.length != 19) {
+        }else if (input[1].value.length != 19 || letters.test(input[1].value) ){
             error[1].textContent = 'Card number is not valid';
             input[1].classList.add('error');
             return false;
         }
-        else {
+        else if(numbers.test(input[1].value) && input[1].value.length == 19){
             error[1].textContent = '' 
             input[1].classList.remove('error');
             input[1].classList.add('keyup');
@@ -130,7 +132,8 @@ btnConfirm.addEventListener('click', (e)=>{
     // Display User Input
     for (let i = 0; i < input.length; i++) {
         
-        if (input[i].value == '' || error[0].textContent != '' || error[1].textContent != '' || error[2].textContent != '' || error[3].textContent != '') {
+        if (input[0].value == '' || input[1].value == '' || input[2].value == '' || input[3].value == '' || input[4].value == ''
+            || error[0].textContent != '' || error[1].textContent != '' || error[2].textContent != '' || error[3].textContent != '') {
             document.querySelector('.error-msg').style.visibility = 'visible';
             
         }

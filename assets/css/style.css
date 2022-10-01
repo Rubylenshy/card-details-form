@@ -36,7 +36,7 @@ input{
 }
 form span{
     color: var(--red);
-    font-size: .85em;
+    font-size: .75em;
     margin-top: 5px;
 }
 
@@ -96,7 +96,7 @@ form span{
 #card-number{
     font-size: 29px;
     margin-top: 60px;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
 }   
 #card-name-exp{
     font-size: 14px;
@@ -126,7 +126,7 @@ form{
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    margin: 0 auto 0;
+    margin: 0 auto 30px;
 }
 .error-msg{
     justify-content: center;
@@ -261,10 +261,6 @@ label{
     .card-img-front{
         width: 350px;
     }
-    
-    /* .card-back, .front-card{
-        width: 300px;
-    } */
 
     .details{
         width: 100%;
@@ -272,6 +268,9 @@ label{
     .card-form{
         display: flex;
         align-items: center;
+    }
+    form span{
+        font-size: .85em;
     }
 
     
