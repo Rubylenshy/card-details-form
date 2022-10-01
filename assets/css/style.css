@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root{
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --red: hsl(0, 100%, 66%);
+    --gradient-input: hsl(249, 99%, 64%), hsl(278, 94%, 30%);
+    --ff-grotesk: 'Space Grotesk', sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, button, input{
+    font-family: var(--ff-grotesk);
+}
+
+input{
+    padding: 10px 15px;
+    font-size: 1.05em;
+    width: 100%;
+    outline: none;
+    border: 2px solid var(--light-grayish-violet);
+    border-radius: 10px;
+    color: black;
+}
+.keyup{
+    border: 2px solid hsl(249, 99%, 64%);
+}
+.error{
+    border: 2px dotted var(--red);
+}
+form span{
+    color: var(--red);
+    font-size: .85em;
+    margin-top: 5px;
+}
+
+
+.desktop-background{
+    display: none;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.mobile-background{
+    height: 350px;
+    width: 100%;
+}
+.mobile-background img{
+    width: 100%;
+    height: 100%;
+}
+.card img{
+    max-width: 100%;
+}
+.card-back,
+.front-card{
+    width: 350px;
+}
+.card-back{
+    position: absolute;
+    top: 50px;
+    left: 15%;
+    width: 80%;
+    z-index: 1;
+}
+#card-cvc{
+    position: absolute;
+    top: 110px;
+    left: 340px;
+    color: var(--light-grayish-violet);
+}
+.front-card{
+    position: absolute;
+    width: 80%;
+    left: 5%;
+    top: 200px;
+    z-index: 1;
+}
+.front-details{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: var(--light-grayish-violet);
+}
+#card-number{
+    font-size: 29px;
+    margin-top: 60px;
+    letter-spacing: 3px;
+}   
+#card-name-exp{
+    font-size: 14px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+#card-name{
+    text-transform: uppercase;
+}
+
+
+.details{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.details > .card-form,
+.details > .thank-you{
+    width: 100%;
+    flex-shrink: 0;
+    transform: scale(1);
+}
+
+form{
+    padding: 20px 5% 80px;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 60px auto 0;
+}
+.error-msg{
+    justify-content: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+}
+.error-msg img{
+    margin-right: 5px;
+}
+form > div{
+    margin-bottom: 15px;
+}
+.cc-exp-cvc{
+    display: flex;
+    justify-content: space-between;
+}
+.cc-exp{
+    width: 50%;
+}
+.cc-cvc{
+    width: 40%;
+}
+.cc-exp-input{
+    display: flex;
+}
+.cc-exp-input input:nth-child(1){
+    margin-right: 10px;
+}
+.cc-cvc input{
+    width: 100%;
+}
+label{
+    margin-bottom: 10px;
+    font-size: .75em;
+    font-weight: 500;
+}
+.cc-name,.cc-number{
+    display: flex;
+    flex-direction: column;
+}
+.confirm,
+.continue{
+    margin-top: 40px;
+    padding: 20px 0;
+    width: 100%;
+    font-size: 1.15em;
+    border: none;
+    border-radius: 10px;
+    background: var(--very-dark-violet);
+    color: var(--white);
+    cursor: pointer;
+}
+.confirm:hover,.confirm:focus,
+.continue:hover,.continue:focus{
+    outline: 2px solid var(--very-dark-violet);
+    color: var(--very-dark-violet);
+    background: transparent;
+}
+.thank-you{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+    margin: 18vh auto 40px;
+    animation: drop 1s;
+}
+.secondary-heading{
+    letter-spacing: 5px;
+    margin: 25px 0 10px;
+}
+.sec-paragraph{
+    color: var(--dark-grayish-violet);
+}
+.continue{
+    max-width: 400px;
+}
+
+
+
+@media (min-width: 850px) {
+    .container{
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .mobile-background{
+        display: none;
+    }
+    .desktop-background{
+        display: block;
+        width: 45%;
+    }
+    .desktop-background img{
+        max-height: 100vh;
+    }
+    .card-back,
+    .front-card{
+        width: 350px;
+    }
+
+    .card-back{
+        left: 15%;
+        top: 320px;
+    }
+    .front-card{
+        left: 10%;
+        top: 100px;
+    }
+
+    #card-cvc{
+        top: 85px;
+        left: 270px;
+    }
+    .front-details{
+        top: 25px;
+        left: 25px;
+    }
+    .front-details img{
+        height: 40px;
+    }
+    #card-number{
+        margin-top: 35px;
+        font-size: 1.35em;
+    }
+    .card-img-back,
+    .card-img-front{
+        width: 350px;
+    }
+    
+    /* .card-back, .front-card{
+        width: 300px;
+    } */
+
+    .details{
+        width: 100%;
+    }
+    .card-form{
+        display: flex;
+        align-items: center;
+    }
+
+    
+
+    .cc-exp-input input:nth-child(1){
+        margin-right: 15px;
+    }
+    .thank-you{
+        width: 55%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .sec-paragraph{
+        font-size: 20px;
+    }
+
+}
+
+
+
+@media (max-width: 520px) {
+    .mobile-background{
+        height: 250px;
+    }
+    .front-card{
+        top: 180px;
+    }
+    .card-back{
+        top: 100px;
+    }
+    
+    .card-img-back,
+    .card-img-front{
+        width: 250px;
+    }
+    #card-cvc{
+        font-size: 12px;
+        top: 59px;
+        left: 190px;
+    }
+    .front-details{
+        top: 20px;
+        left: 20px;
+    }
+    .front-details img{
+        height: 25px;
+    }
+    #card-number{
+        font-size: 15px;
+        margin-top: 25px;
+        letter-spacing: 2px;
+    }
+    #card-name-exp{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    form{
+        margin-top: 20px;
+    }
+    .thank-you{
+        margin: 20vh auto 20px;
+    }
+}
+@media (max-width: 300px) {
+    
+    .card-img-back,
+    .card-img-front{
+        width: 180px;
+    }
+
+    #card-cvc{
+        font-size: 10px;
+        top: 42px;
+        left: 140px;
+    }
+    .front-details{
+        left: 15px;
+        top: 15px;
+    }
+    .front-details img{
+        height: 20px;
+    }
+    #card-number{
+        font-size: 12px;
+        margin-top: 15px;
+        letter-spacing: 1px;
+    }
+    #card-name-exp{
+        font-size: 9px;
+        margin-top: 5px;
+    }
+    form{
+        margin-top: 0px;
+    }
+    .secondary-heading{
+        font-size: 1.45em;
+    }
+    .sec-paragraph{
+        font-size: 0.80em;
+    }
+
+}
+
+@keyframes drop {
+    from{
+        opacity: 0;
+    }
+}

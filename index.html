@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+<body>
+
+  <main>
+
+    <div class="container">
+      
+      <div class="mobile-background">
+        <img src="assets/images/bg-main-mobile.png" alt="">
+      </div>
+      <div class="desktop-background">
+        <img src="assets/images/bg-main-desktop.png" alt="">
+      </div>
+
+      <div class="card">
+
+        <div class="card-back">
+          <img src="assets/images/bg-card-back.png" alt="" class="card-img-back">
+          <p id="card-cvc">000</p>
+        </div>
+
+        <div class="front-card">
+          <img src="assets/images/bg-card-front.png" alt="" class="card-img-front">
+          <div class="front-details">
+            <img src="assets/images/card-logo.svg" alt="">
+            <p id="card-number">0000 0000 0000 0000</p>
+            <div id="card-name-exp">
+              <span id="card-name">JANE APPLESEED</span> 
+              <span><span id="card-month">00</span>/<span id="card-year">00</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="details">
+        <div class="card-form">
+          <form action="">
+            <div class="error-msg"><img src="assets/images/exclamation-triangle.svg" alt=""> All inputs are required!</div>
+            <div class="cc-name">
+                <label for="name">CARDHOLDER NAME</label>
+                <input type="text" id="name" minlength="2" placeholder="e.g. Jane Appleseed" >
+                <span id="error-name"></span>
+            </div>
+            <div class="cc-number">
+              <label for="number">CARD NUMBER</label>
+              <input type="text" id="number" maxlength="19" 
+              placeholder="e.g. 1234-5678-9123-0000">
+              <span id="error-number"></span>
+            </div>
+            <div class="cc-exp-cvc">
+              <div class="cc-exp">
+                <label for="exp">EXP. DATE (MM/YY)</label>
+                <div class="cc-exp-input">
+                  <input type="text" id="expiry-mm" maxlength="2" placeholder="MM" >
+                  <!-- use slice() here -->
+                  <input type="text" id="expiry-yy" maxlength="4" placeholder="YYYY">
+                </div>
+                <span id="error-exp"></span>
+              </div>
+              <div class="cc-cvc">
+                <label for="cvc">CVC</label>
+                <input type="text" id="cvc" maxlength="3" 
+                placeholder="e.g. 123">
+                <span id="error-cvc"></span>
+              </div>
+            </div>
+            <button type="submit" class="confirm">Confirm</button>
+          </form>
+        </div>
+        <div class="thank-you">
+          <img src="assets/images/icon-complete.svg" alt="Complete">
+          <h1 class="secondary-heading">THANK YOU!</h1>
+          <p class="sec-paragraph">We've added your card details</p>
+          <button class="continue">Continue</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
