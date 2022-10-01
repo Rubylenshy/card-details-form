@@ -122,11 +122,11 @@ form span{
 }
 
 form{
-    padding: 20px 5% 80px;
+    padding: 100px 5% 80px;
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    margin: 60px auto 0;
+    margin: 0 auto 0;
 }
 .error-msg{
     justify-content: center;

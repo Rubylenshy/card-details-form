@@ -37,8 +37,8 @@ for (let i = 0; i < input.length; i++) {
         }else if (input[1].value.length == 4 || input[1].value.length == 9 || input[1].value.length == 14) {
             input[1].value = input[1].value + ' ';
             return false;
-        }else if (input[1].value.length != 19 || letters.test(input[1].value)) {
-            error[1].textContent = 'Card number is not valid' ;
+        }else if (input[1].value.length != 19) {
+            error[1].textContent = 'Card number is not valid';
             input[1].classList.add('error');
             return false;
         }
